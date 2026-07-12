@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.netapp_accounts : {
       for k2, v2 in coalesce(v1.netapp_account_encryptions, {}) :
       "${k1}/${k2}" => merge(v2, {
-        netapp_account_id = module.netapp_accounts.netapp_accounts["${k1}"].id
+        netapp_account_id = module.netapp_accounts.netapp_accounts_id["${k1}"]
       })
     }
   ]...)
