@@ -1,4 +1,9 @@
 # --- azurerm_netapp_account ---
+output "netapp_accounts_id" {
+  description = "Map of id values across all netapp_accounts, keyed the same as var.netapp_accounts"
+  value       = module.netapp_accounts.netapp_accounts_id
+}
+
 output "netapp_accounts_active_directory" {
   description = "Map of active_directory values across all netapp_accounts, keyed the same as var.netapp_accounts"
   value       = module.netapp_accounts.netapp_accounts_active_directory
@@ -31,6 +36,11 @@ output "netapp_accounts_tags" {
 }
 
 # --- azurerm_netapp_account_encryption ---
+output "netapp_account_encryptions_id" {
+  description = "Map of id values across all netapp_account_encryptions, keyed the same as var.netapp_account_encryptions"
+  value       = module.netapp_account_encryptions.netapp_account_encryptions_id
+}
+
 output "netapp_account_encryptions_cross_tenant_key_vault_resource_id" {
   description = "Map of cross_tenant_key_vault_resource_id values across all netapp_account_encryptions, keyed the same as var.netapp_account_encryptions"
   value       = module.netapp_account_encryptions.netapp_account_encryptions_cross_tenant_key_vault_resource_id
